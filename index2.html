@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proriza - Globally Patented Organic White Rice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #8B4513;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #4CAF50;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: #8B4513;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            background: linear-gradient(135deg, rgba(139, 69, 19, 0.7) 0%, rgba(76, 175, 80, 0.6) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23228B22" width="1200" height="600"/><g opacity="0.6"><path d="M0,400 Q300,350 600,400 T1200,400 L1200,600 L0,600 Z" fill="%234CAF50"/></g><g opacity="0.4"><circle cx="100" cy="100" r="3" fill="%23FFD700"/><circle cx="200" cy="120" r="2" fill="%23FFD700"/><circle cx="300" cy="80" r="4" fill="%23FFD700"/><circle cx="400" cy="140" r="2" fill="%23FFD700"/><circle cx="500" cy="90" r="3" fill="%23FFD700"/><circle cx="600" cy="130" r="2" fill="%23FFD700"/><circle cx="700" cy="110" r="4" fill="%23FFD700"/><circle cx="800" cy="95" r="3" fill="%23FFD700"/><circle cx="900" cy="125" r="2" fill="%23FFD700"/><circle cx="1000" cy="105" r="3" fill="%23FFD700"/><circle cx="1100" cy="85" r="2" fill="%23FFD700"/></g><g opacity="0.3"><rect x="50" y="300" width="4" height="40" fill="%23654321"/><path d="M52,300 Q48,290 44,300 Q52,290 60,300 Q56,290 52,300" fill="%234CAF50"/><rect x="150" y="280" width="4" height="60" fill="%23654321"/><path d="M152,280 Q148,270 144,280 Q152,270 160,280 Q156,270 152,280" fill="%234CAF50"/><rect x="250" y="320" width="4" height="30" fill="%23654321"/><path d="M252,320 Q248,310 244,320 Q252,310 260,320 Q256,310 252,320" fill="%234CAF50"/><rect x="350" y="290" width="4" height="50" fill="%23654321"/><path d="M352,290 Q348,280 344,290 Q352,280 360,290 Q356,280 352,290" fill="%234CAF50"/><rect x="450" y="310" width="4" height="35" fill="%23654321"/><path d="M452,310 Q448,300 444,310 Q452,300 460,310 Q456,300 452,310" fill="%234CAF50"/><rect x="550" y="295" width="4" height="45" fill="%23654321"/><path d="M552,295 Q548,285 544,295 Q552,285 560,295 Q556,285 552,295" fill="%234CAF50"/><rect x="650" y="285" width="4" height="55" fill="%23654321"/><path d="M652,285 Q648,275 644,285 Q652,275 660,285 Q656,275 652,285" fill="%234CAF50"/><rect x="750" y="315" width="4" height="25" fill="%23654321"/><path d="M752,315 Q748,305 744,315 Q752,305 760,315 Q756,305 752,315" fill="%234CAF50"/><rect x="850" y="305" width="4" height="35" fill="%23654321"/><path d="M852,305 Q848,295 844,305 Q852,295 860,305 Q856,295 852,305" fill="%234CAF50"/><rect x="950" y="275" width="4" height="65" fill="%23654321"/><path d="M952,275 Q948,265 944,275 Q952,265 960,275 Q956,265 952,275" fill="%234CAF50"/><rect x="1050" y="300" width="4" height="40" fill="%23654321"/><path d="M1052,300 Q1048,290 1044,300 Q1052,290 1060,300 Q1056,290 1052,300" fill="%234CAF50"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 120px 5% 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" x="0" y="0" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r="1" fill="%23fff" opacity="0.1"/><circle cx="1" cy="1" r="0.5" fill="%23FFD700" opacity="0.2"/><circle cx="5" cy="2" r="0.3" fill="%23FFD700" opacity="0.15"/><circle cx="2" cy="5" r="0.4" fill="%23FFD700" opacity="0.18"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: bold;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            color: #FFD700;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease 0.4s both;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .trust-text {
+            font-style: italic;
+            color: #FFD700;
+            animation: fadeInUp 1s ease 0.6s both;
+            font-size: 1.1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Company Logo in Hero */
+        .hero-logo {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 120px;
+            height: auto;
+            z-index: 3;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .hero-logo:hover {
+            opacity: 1;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-card h3 {
+            color: #8B4513;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card .highlight {
+            color: #4CAF50;
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+            margin: 1rem 0;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .products h2 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-btn {
+            padding: 1rem 2rem;
+            background: #B8860B;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .product-btn:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+        }
+
+        .product-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .product-packaging {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .package-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .package-card h4 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+
+        .nutrition-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .nutrition-table h3 {
+            background: #4CAF50;
+            color: white;
+            padding: 1rem;
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f8f8f8;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .highlight-cell {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* Science Section */
+        .science {
+            padding: 80px 5%;
+            background: white;
+        }
+
+        .science-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .science h2 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .process-card {
+            background: #f8f8f8;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .process-card h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+
+        .pledge {
+            background: #4CAF50;
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .pledge h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 80px 5%;
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .reviews h2 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .rating-overview {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .rating-score {
+            text-align: center;
+        }
+
+        .rating-score .score {
+            font-size: 3rem;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        .review-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .review-card .stars {
+            margin-bottom: 1rem;
+        }
+
+        .review-card p {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer {
+            font-weight: bold;
+            color: #8B4513;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 5%;
+            background: #8B4513;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+            color: #FFD700;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #45a049;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-logo {
+                width: 80px;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .product-packaging {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .package-card {
+                max-width: 100%;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 0.5rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .product-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .rating-overview {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Mobile Navigation */
+        .nav-links.mobile {
+            display: flex;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: white;
+            flex-direction: column;
+            padding: 1rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            gap: 1rem;
+        }
+
+        .nav-links.mobile.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <img src="./logo.jpeg" alt="Proriza Logo" class="logo" width="200" height="60">
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#story">Story</a></li>
+                <li><a href="#products">Product</a></li>
+                <li><a href="#science">Science</a></li>
+                <li><a href="#contact">Shop</a></li>
+            </ul>
+            
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with Background Image -->
+    <section class="hero" id="story">
+        <!-- Company Logo in top right corner -->
+        <img src="./logo.jpeg" alt="Proriza Company Logo" class="hero-logo" width="120" height="80">
+
+        <div class="hero-content">
+            <h1>Globally Patented Organic White Rice</h1>
+            <h2>with 12% Protein, 12% Dietary Fibre, 73% Lower GI</h2>
+            <p>Naturally sun-dried. Certified sustainable.</p>
+            <p class="trust-text">Trusted by the finest of dieticians</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <h3>High Protein</h3>
+                    <span class="highlight">12%</span>
+                    <p>vs 3% in regular rice. Essential for muscle building and repair.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <h3>High Fibre</h3>
+                    <span class="highlight">SDF + IDF</span>
+                    <p>8 g/cup. Supports digestive health and satiety.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <h3>Slow Carb</h3>
+                    <span class="highlight">GI < 45</span>
+                    <p>gentler on glucose. Sustained energy release.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <h3>Solar Dried</h3>
+                    <span class="highlight">Retains</span>
+                    <p>vitamins, saves energy. Environmentally conscious processing.</p>
+                </div>
+                
+                <div class="feature-card fade-in">
+                    <h3>Farmer-Forward</h3>
+                    <span class="highlight">+12%</span>
+                    <p>net income per acre. Supporting sustainable agriculture.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="products-container">
+            
+           
+                
+                <div class="nutrition-table fade-in">
+                    <h3>Rice Type/Nutritional Value (per 100g)</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nutrient</th>
+                                <th>Village Rice</th>
+                                <th>White Rice</th>
+                                <th>Brown Rice</th>
+                                <th>Quinoa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dietary Fiber (g)</td>
+                                <td class="highlight-cell">13.08</td>
+                                <td>0.5</td>
+                                <td>3</td>
+                                <td>2.8</td>
+                            </tr>
+                            <tr>
+                                <td>Protein (g)</td>
+                                <td class="highlight-cell">12.13</td>
+                                <td>7.81</td>
+                                <td>9.16</td>
+                                <td>4.4</td>
+                            </tr>
+                            <tr>
+                                <td>Energy (Kcal)</td>
+                                <td class="highlight-cell">347.59</td>
+                                <td>351.57</td>
+                                <td>353.72</td>
+                                <td>220</td>
+                            </tr>
+                            <tr>
+                                <td>Carbohydrate (g)</td>
+                                <td class="highlight-cell">70.77</td>
+                                <td>77.16</td>
+                                <td>74.8</td>
+                                <td>39.41</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science Section -->
+    <section class="science" id="science">
+        <div class="science-container">
+            <h2>Proriza Products Development Process</h2>
+            
+            <div class="process-grid">
+                <div class="process-card fade-in">
+                    <h3>Mutation Breeding</h3>
+                    <p>It's a conventional breeding method highly suitable to enhance the nutritional value of crops. We had screened thousands of mutant plants of rice to discover plants capable of expressing high resistant starch, dietary fibre and protein contents.</p>
+                </div>
+                
+                <div class="process-card fade-in">
+                    <h3>Hybridization</h3>
+                    <p>We utilised the classical hybridisation methods to stack a number of mutations in a common high yielding varietal backgrounds so that all the enhanced nutritional parameters are expressed without yield penalty.</p>
+                </div>
+                
+                <div class="process-card fade-in">
+                    <h3>Selection</h3>
+                    <p>We use modern biochemical screening methods to select mutants and segregants from our hybridisation programmes to end up with breeding materials with multiple health benefits.</p>
+                </div>
+            </div>
+            
+            <div class="pledge fade-in">
+                <h3>Pledge</h3>
+                <p>Proriza Rice products are not a Genetic Modified Organism (GMO) as we never employ genetic engineering techniques or gene transfer methods.</p>
+                <p>Proriza is always produced using Good Agriculture Practices (GAP)</p>
+                <ul style="text-align: left; margin-top: 1rem;">
+                    <li>We take care to avoid banned chemical fungicides and pesticides</li>
+                    <li>We also avoid banned fertilizers and plant growth regulators</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews">
+        <div class="reviews-container">
+            <h2>Customer Reviews</h2>
+            
+            <div class="rating-overview">
+                <div class="rating-score">
+                    <div class="score">4.1</div>
+                    <div class="stars">★★★★☆</div>
+                    <div>out of 5</div>
+                    <div>93 global ratings</div>
+                </div>
+                
+                <div style="text-align: left;">
+                    <div style="display: flex; align-items: center; margin: 0.5rem 0;">
+                        <span>5 star</span>
+                        <div style="width: 200px; height: 10px; background: #eee; margin: 0 1rem; border-radius: 5px;">
+                            <div style="width: 56%; height: 100%; background: #FFD700; border-radius: 5px;"></div>
+                        </div>
+                        <span>56%</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin: 0.5rem 0;">
+                        <span>4 star</span>
+                        <div style="width: 200px; height: 10px; background: #eee; margin: 0 1rem; border-radius: 5px;">
+                            <div style="width: 23%; height: 100%; background: #FFD700; border-radius: 5px;"></div>
+                        </div>
+                        <span>23%</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin: 0.5rem 0;">
+                        <span>3 star</span>
+                        <div style="width: 200px; height: 10px; background: #eee; margin: 0 1rem; border-radius: 5px;">
+                            <div style="width: 10%; height: 100%; background: #FFD700; border-radius: 5px;"></div>
+                        </div>
+                        <span>10%</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="review-cards">
+                <div class="review-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p>"Our family is using this rice for all purpose! Be it dosa, idli & etc. It's good & especially it's low glycemic index seems very helpful for diabetes. My dad had very high sugar level & after we shifted to this rice fully for 3 months, his sugar levels has dropped to a great extent! Well packed & great product ♥️"</p>
+                    <div class="reviewer">- Priya M., Verified Buyer</div>
+                </div>
+                
+                <div class="review-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p>"Very healthy option and tastes good too! The quality is consistent and it cooks well. Great for health-conscious families."</p>
+                    <div class="reviewer">- Verified Customer</div>
+                </div>
+                
+                <div class="review-card fade-in">
+                    <div class="stars">★★★★★</div>
+                    <p>"Amazing quality of the rice. It controls sugar to a great extent. Highly recommended for diabetic patients and health enthusiasts."</p>
+                    <div class="reviewer">- Verified Customer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Have questions?</h2>
+            <p>Ask our founders</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <p>support@proriza.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p>+91 - 888 222999222</p>
+                </div>
+            </div>
+            
+            <a href="YOUR_GOOGLE_FORM_LINK_HERE" class="cta-button" target="_blank">Contact Us</a>
+            
+            <div style="margin-top: 2rem; opacity: 0.8;">
+                <p>FAQ | Certifications | Patent Details</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Proriza. All rights reserved. | Globally Patented Organic Rice</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('mobile');
+            navLinks.classList.toggle('hidden');
+        }
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Product button interactions
+        document.querySelectorAll('.product-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.product-btn').forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
